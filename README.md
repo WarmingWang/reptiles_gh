@@ -3,4 +3,7 @@
 小爬虫们集聚地。
 
 JUST FOR FUN.
-两个回车表示换段。
+##爬虫1
+###Bing background image
+抓取bing主页背景图片并存储到指定目录。
+利用了bing官方API，该API下存储最近八天的图片URL，利用urllib抓取。
