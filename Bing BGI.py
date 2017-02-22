@@ -1,3 +1,6 @@
+#D:\Python\Python35\python
+# -*- coding:utf-8 -*-
+
 import re,sys,os,time,logging
 
 import urllib.request
