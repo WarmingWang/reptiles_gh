@@ -1,7 +1,7 @@
 #D:\Python\Python35\python.exe
 # -*- coding:utf-8 -*-
 
-import requests,re,csv
+import requests,re,csv,os
 import jieba.analyse
 from wordcloud import WordCloud
 from scipy.misc import imread
