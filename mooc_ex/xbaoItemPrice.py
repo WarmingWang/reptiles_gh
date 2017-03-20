@@ -4,6 +4,8 @@
 
 import requests,csv,re,os,time
 
+i=1  #全局计数变量
+
 def getHTMLtext(url):
     try:
         r=requests.get(url)
@@ -13,34 +15,46 @@ def getHTMLtext(url):
         print('获取页面异常')
 
 def parsePage(ilt,html):
-    info=re.findall(r'raw_title":"(.*?)",.*?,"view_price":"(.*?)".*?"view_sales":"(.*?)","comment_count":"(.*?)"',html)   #
-    ilt.append(info)
+    # info=re.findall(r'raw_title":"(.*?)",.*?,"view_price":"(.*?)".*?"view_sales":"(.*?)人付款","comment_count":"(.*?)"',html)   #
+    # for item in info:
+    #     ilt.append(list(item))
+    # print(ilt)
+    global i
+    info=re.finditer(r'raw_title":"(.*?)",.*?,"view_price":"(.*?)".*?"view_sales":"(.*?)人付款","comment_count":"(.*?)"',html)   #
+
+    for item in info:
+        ilt.append([i,item.group(1),item.group(2),item.group(3),item.group(4)])
+        i+=1
+
+
     # view_price=re.findall(r'"view_price":"(.*?)"',html)
     # view_sales=re.findall(r'"view_sales":"(.*?)"',html)
 
 
-def write2csv(ilt,fpath):
-    with open(fpath,'w+',newline='\n') as csvfile:
+def write2csv(item,fpath):
+    with open(fpath,'a+',newline='\n') as csvfile:
         writer=csv.writer(csvfile)
-        for m in range(len(ilt)):
-            for i in range(len(ilt[m])):
-                writer.writerow(ilt[m][i])
+        # for m in range(len(ilt)):
+        #     for i in range(len(ilt[m])):
+        #         writer.writerow(ilt[m][i])
+        writer.writerow(item)
         csvfile.close()
 
 
 def main():
-    kw = '书包'
+    kw = '收纳盒'
     url='https://s.taobao.com/search?q='+kw
-    ilt=[]
-    depth=2
+    ilt=[[kw],['No.','名称','价格','付款人数','评论数']]
+    page=20
     csv_path=os.path.join(os.getcwd(),'xbaoItem.csv')
-    for i in range(depth):
+    for i in range(page):
         html=getHTMLtext(url+'&s='+str(44*i))
         parsePage(ilt,html)
+        time.sleep(5)
         print(i)
-        # time.sleep(15)
-
-    write2csv(ilt,csv_path)
+        for item in ilt:
+            write2csv(item,csv_path)
+        ilt.clear()  #降低内存占用
 
 
 if __name__=='__main__':
