@@ -55,7 +55,6 @@ def main():
         for item in ilt:
             write2csv(item,csv_path)
         ilt.clear()  #降低内存占用
-    # print(ilt)
 
 if __name__=='__main__':
     main()
