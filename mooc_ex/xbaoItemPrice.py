@@ -45,7 +45,7 @@ def main():
     kw = '收纳盒'
     url='https://s.taobao.com/search?q='+kw
     ilt=[[kw],['No.','名称','价格','付款人数','评论数']]
-    page=20
+    page=1
     csv_path=os.path.join(os.getcwd(),'xbaoItem.csv')
     for i in range(page):
         html=getHTMLtext(url+'&s='+str(44*i))
@@ -55,7 +55,7 @@ def main():
         for item in ilt:
             write2csv(item,csv_path)
         ilt.clear()  #降低内存占用
-
+    # print(ilt)
 
 if __name__=='__main__':
     main()
