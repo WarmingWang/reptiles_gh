@@ -37,7 +37,7 @@ def getStockInfo(lst,stockURL,fpath):
             soup=BeautifulSoup(html,'html.parser')
             stockInfo=soup.find('div',attrs={'class':'stock-bets'})
 
-            name=stockInfo.find_all(attrs={'class':'stock-bets'})[0]
+            name=stockInfo.find_all(attrs={'class':'bets-name'})[0]
             infoDict.update({'股票名称':name.text.split()[0]})
 
             keylist=stockInfo.find_all('dt')
