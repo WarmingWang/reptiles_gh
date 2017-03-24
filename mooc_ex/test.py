@@ -1,13 +1,24 @@
 #D:\Python\Python35\python.exe
 # -*- coding:utf-8 -*-
 
-import requests
+import csv,requests
+from bs4 import BeautifulSoup
+f_path=r'C:\users\acer\desktop\test.csv'
 
-r=requests.get('https://gupiao.baidu.com/stock/sh204003.html')
+url='https://gupiao.baidu.com/stock/sh600050.html'
+r=requests.get(url)
 r.encoding=r.apparent_encoding
-if not '雾霾太大' in r.text:
-    print('you')
-else:
-    print('wu')
 print(r.status_code)
-# print(r.text)
+html=r.text
+soup=BeautifulSoup(html,'html.parser')
+stockInfo=soup.find('div',attrs={'class':'stock-bets'})
+infoDict={}
+name=stockInfo.find_all(attrs={'class':'bets-name'})[0]
+infoDict.update({'股票名称':name.text.split()[0]})
+fieldnames=[]
+keylist=stockInfo.find_all('dt')
+valuelist=stockInfo.find_all('dd')
+for i in range(len(keylist)):
+    key=keylist[i].text
+    fieldnames.append(key)
+print(fieldnames)
