@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-import scrapy,re
+import scrapy,re,jieba,wordcloud
+
 
 
 class StocksSpider(scrapy.Spider):

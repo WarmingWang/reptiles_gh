@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re,traceback,os,csv
-from multiprocessing import Process
+# from multiprocessing import Process
 
 def getHTMLText(url):
     try:
