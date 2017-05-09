@@ -117,7 +117,10 @@ def multi_figure():
 
     plt.show()
 
+def shape_test():
+    a=np.arange(20).reshape(4,5)
+    print(a)
+    print(a.shape[0])
 
 
-
-multi_figure()
+shape_test()
