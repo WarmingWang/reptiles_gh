@@ -17,7 +17,7 @@ ltime=np.arange(-ltime_len/2,ltime_len/2,ltime_interval)
 fig=plt.figure(figsize=(12,6))
 
 plth=fig.add_subplot(221)
-plth.plot(htime,hstrain,'y')
+plth.plot(htime,hstrain,'r')
 plth.set_xlabel('Time(seconds)')
 plth.set_ylabel('H1 Strain')
 plth.set_title('H1 Strain')
