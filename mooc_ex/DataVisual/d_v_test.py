@@ -1,9 +1,10 @@
 # -*- coding:utf-8 -*-
 
-import matplotlib.pyplot as plt
-import numpy as np
+# import matplotlib.pyplot as plt
+# import numpy as np
 import matplotlib
 import pandas as pd
+import tensorflow as tf
 
 
 matplotlib.rcParams['font.family']='SimHei'
@@ -31,5 +32,9 @@ def pd_test():
     print(d)
     print(d.ix['r2'])
 
+def tf_test():
+    a=tf.zeros([1])
+    print(a)
 
-ex_test()
+
+tf_test()

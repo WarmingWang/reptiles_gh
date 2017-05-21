@@ -20,7 +20,7 @@ init=tf.initialize_all_variables()
 sess=tf.Session()
 sess.run(init)
 
-for step in range(0,3001):
+for step in range(0,301):
     sess.run(train)
     if step % 20==0:
         print(step,sess.run(w),sess.run(b))
