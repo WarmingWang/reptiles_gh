@@ -2,13 +2,13 @@
 
 # import matplotlib.pyplot as plt
 # import numpy as np
-import matplotlib
+# import matplotlib
 import pandas as pd
 import tensorflow as tf
 
-
-matplotlib.rcParams['font.family']='SimHei'
-matplotlib.rcParams['font.size']=10
+#
+# matplotlib.rcParams['font.family']='SimHei'
+# matplotlib.rcParams['font.size']=10
 
 def pd_test():
     # d=pd.Series({'a':9,'b':8,'c':11})
@@ -28,13 +28,11 @@ def pd_test():
     }
 
     d=pd.DataFrame(dl,index=['r1','r2','r3','r4','r5'])
-
+    d.reindex(index=['r5','r4','r3','r2','r1'])
+    d.reindex(columns=['城市','同比','环比','定基'])
+    # d.columns.insert(4,'新增')
     print(d)
-    print(d.ix['r2'])
-
-def tf_test():
-    a=tf.zeros([1])
-    print(a)
 
 
-tf_test()
+
+pd_test()
