@@ -4,7 +4,6 @@
 # import numpy as np
 # import matplotlib
 import pandas as pd
-import tensorflow as tf
 
 #
 # matplotlib.rcParams['font.family']='SimHei'

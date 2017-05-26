@@ -3,7 +3,6 @@
 import tensorflow as tf
 import numpy as np
 
-
 x_data=np.float32(np.random.rand(2,100))
 y_data=np.dot([0.100,0.200],x_data)+0.300
 
@@ -20,7 +19,7 @@ init=tf.initialize_all_variables()
 sess=tf.Session()
 sess.run(init)
 
-for step in range(0,301):
+for step in range(0,201):
     sess.run(train)
-    if step % 20==0:
+    if step % 10==0:
         print(step,sess.run(w),sess.run(b))
