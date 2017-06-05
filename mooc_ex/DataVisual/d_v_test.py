@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 # import matplotlib.pyplot as plt
-# import numpy as np
+import numpy as np
 # import matplotlib
 import pandas as pd
 
@@ -32,6 +32,11 @@ def pd_test():
     # d.columns.insert(4,'新增')
     print(d)
 
+def ex_test():
+    dt = {'one': [9, 8, 7, 6], 'two': [3, 2, 1, 0]}
+    a = pd.DataFrame(dt)
+    print(a.reindex(index=(2,3)))
 
 
-pd_test()
+
+ex_test()

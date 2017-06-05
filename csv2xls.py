@@ -2,7 +2,6 @@
 
 import tkinter.filedialog as tk
 
-
 import csv
 
 filename=tk.askopenfilename()
