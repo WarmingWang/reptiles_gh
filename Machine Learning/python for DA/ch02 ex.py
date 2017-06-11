@@ -15,5 +15,8 @@ def get_counts(sequense):
             counts[x]=1
     return counts
 
+def get_counts2(sequence):
+    from collections import defaultdict
+
 # print(time_zones)
 # print(get_counts(time_zones))
