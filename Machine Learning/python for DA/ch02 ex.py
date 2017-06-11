@@ -64,13 +64,14 @@ def get_browser():
     plt.show()
 
 def win_count():
+    cframe=frame[frame.a.notnull()]
+    print(cframe[:10])
 
 
 
 
 
-
-# win_count()
+win_count()
 # countByPandas(records)
 
 # print(type(time_zones))
