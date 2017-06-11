@@ -15,5 +15,5 @@ def get_counts(sequense):
             counts[x]=1
     return counts
 
-
-print(get_counts(time_zones))
+# print(time_zones)
+# print(get_counts(time_zones))
