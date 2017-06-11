@@ -1,10 +1,15 @@
 # -*- coding:utf-8 -*-
-import json
+import json,re
+
+import pandas as pd;import numpy as np
+import matplotlib.pyplot as plt
 
 path='data/ch02/usagov_bitly_data2012-03-16-1331923249.txt'
 
+
 records=[json.loads(line) for line in open(path)]
 time_zones=[rec['tz'] for rec in records if 'tz' in rec]
+frame=pd.DataFrame(records)
 
 def get_counts(sequense):
     counts={}
@@ -38,10 +43,8 @@ def countByCounter(tz_dic,n=5):
     c=Counter(tz_dic)
     return c.most_common(n)
 
-def countByPandas(records,n=10):
-    import pandas as pd;import numpy as np
-    import matplotlib.pyplot as plt
-    frame=pd.DataFrame(records)
+def countByPandas(n=10):
+
     # frame.to_csv('out.csv')
     tz=frame['tz']
     clean_tz=tz.fillna('Missing')
@@ -49,11 +52,27 @@ def countByPandas(records,n=10):
     tz_counts=clean_tz.value_counts()[:n]
 
     #Series对象直接绘图
-    tz_counts.plot(kind='barh',rot=0)
+    tz_counts.plot(kind='barh',rot=60)
 
     plt.show()
     print(tz_counts)
-countByPandas(records)
+
+def get_browser():
+    browsers=pd.Series([x.split()[0] for x in frame.a.dropna()])
+    browsers_count=browsers.value_counts()[:10]
+    browsers_count.plot(kind='bar',rot=45)
+    plt.show()
+
+def win_count():
+
+
+
+
+
+
+# win_count()
+# countByPandas(records)
+
 # print(type(time_zones))
 # counts=get_counts2(time_zones)
 # print(countByCounter(time_zones))
