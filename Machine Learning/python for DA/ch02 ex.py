@@ -67,19 +67,26 @@ def win_count():
     cframe=frame[frame.a.notnull()]  #DataFrame类型数据过滤/筛选http://blog.csdn.net/jt1123/article/details/50086595
     o_s=np.where(cframe['a'].str.contains('Windows'),'Windows','Not Windows')
     by_tz_os=cframe.groupby(['tz',o_s])
-    agg_count=by_tz_os.size().unstack().fillna(0)
-    #group by
-    # https://my.oschina.net/lionets/blog/280332
-    print(agg_count[:10])
+    # agg_count=by_tz_os.size().unstack().fillna(0)
+    # print(agg_count[:10])
+    size=by_tz_os.size()
+
+
+    # for i,j in by_tz_os:
+    #     print(type(i))   #i，分组名，元组类型
+    #     print(type(j))   #j,组内Data，DataFrame类型
+
+def test():
+    np.random.seed(5)
+    df=pd.DataFrame({'key1':['a','a','b','b','a'],
+                   'key2':['one','two','one','two','one'],
+                   'data1':np.random.randn(5),
+                   'data2':np.random.randn(5)})
+    gp1=df.groupby(['key1','key2'])
+    gp2=df.groupby([1,1,2,2,1])
+    print(gp2.mean())
+    print(gp1.mean())
+
 
 win_count()
-# countByPandas(records)
-
-# print(type(time_zones))
-# counts=get_counts2(time_zones)
-# print(countByCounter(time_zones))
-
-# print(top_counts(counts,n=5))
-# print(sort_dict(counts,n=5))
-# print(get_counts2(time_zones))
-# print(counts['America/New_York'])
+# test()
