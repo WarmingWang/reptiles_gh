@@ -8,7 +8,7 @@ path='data/ch02/usagov_bitly_data2012-03-16-1331923249.txt'
 
 
 records=[json.loads(line) for line in open(path)]
-time_zones=[rec['tz'] for rec in records if 'tz' in rec]
+time_zones=[rec['tz'] for rec in records if 'tz' in rec]  #列表解析/列表推导
 frame=pd.DataFrame(records)
 
 def get_counts(sequense):
@@ -45,10 +45,10 @@ def countByCounter(tz_dic,n=5):
 
 def countByPandas(n=10):
 
-    # frame.to_csv('out.csv')
+    frame.to_csv('out.csv')
     tz=frame['tz']
     clean_tz=tz.fillna('Missing')
-    clean_tz[clean_tz=='']='unknown'
+    clean_tz[clean_tz=='']='unknown'   #DataFrame类型数据过滤
     tz_counts=clean_tz.value_counts()[:n]
 
     #Series对象直接绘图
@@ -64,12 +64,11 @@ def get_browser():
     plt.show()
 
 def win_count():
-    cframe=frame[frame.a.notnull()]
-    print(cframe[:10])
-
-
-
-
+    cframe=frame[frame.a.notnull()]  #DataFrame类型数据过滤/筛选http://blog.csdn.net/jt1123/article/details/50086595
+    o_s=np.where(cframe['a'].str.contains('Windows'),'Windows','Not Windows')
+    by_tz_os=cframe.groupby(['tz',o_s])
+    agg_count=by_tz_os.size().unstack().fillna(0)
+    print(agg_count[:10])
 
 win_count()
 # countByPandas(records)
