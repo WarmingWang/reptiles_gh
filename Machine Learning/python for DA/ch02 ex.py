@@ -68,6 +68,7 @@ def win_count():
     o_s=np.where(cframe['a'].str.contains('Windows'),'Windows','Not Windows')
     by_tz_os=cframe.groupby(['tz',o_s])
     agg_count=by_tz_os.size().unstack().fillna(0)
+    #group by https://my.oschina.net/lionets/blog/280332
     print(agg_count[:10])
 
 win_count()
