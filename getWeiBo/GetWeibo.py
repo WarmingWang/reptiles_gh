@@ -62,7 +62,7 @@ def word_segment(texts):
         yield ' '.join(tags)
 
 def generate_img(tags):
-    mask_path='./img_gh/heart-mask.jpg'
+    mask_path='./heart-mask.png'
     data=' '.join(tag for tag in tags)
     mask_img=imread(mask_path,flatten=True)
     my_cloud=WordCloud(font_path='msyh.ttc',
@@ -70,7 +70,7 @@ def generate_img(tags):
                        mask=mask_img).generate(data)
     plt.imshow(my_cloud)
     plt.axis('off')
-    plt.savefig('./heart.jpg',dpi=1200)
+    plt.savefig('./shuai.jpg',dpi=1200)
 
 if __name__=='__main__':
     texts=claen_text()
