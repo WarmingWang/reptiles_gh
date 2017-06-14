@@ -58,6 +58,7 @@ def write_csv(texts):
 
 def word_segment(texts):
     for text in texts:
+
         tags=jieba.analyse.extract_tags(text)
         yield ' '.join(tags)
 
