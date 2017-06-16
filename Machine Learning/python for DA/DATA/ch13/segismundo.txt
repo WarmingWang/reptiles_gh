@@ -1,14 +1,3 @@
-Sueña el rico en su riqueza,
-que más cuidados le ofrece;
-
-sueña el pobre que padece
-su miseria y su pobreza;
-
-sueña el que a medrar empieza,
-sueña el que afana y pretende,
-sueña el que agravia y ofende,
-
-y en el mundo, en conclusión,
-todos sueñan lo que son,
-aunque ninguno lo entiende.
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:37d4465717d21fb6b460e9f6391c26c2f1f147a03ef4945ea00506da9278c863
+size 310
