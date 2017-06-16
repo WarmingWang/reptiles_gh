@@ -84,7 +84,7 @@ def test():
                    'data2':np.random.randn(5)})
     gp1=df.groupby(['key1','key2'])
     gp2=df.groupby([1,1,2,2,1])
-    print(gp2.mean())
+    print(gp2.mean(  ))
     print(gp1.mean())
 
 
