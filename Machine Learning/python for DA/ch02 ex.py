@@ -69,6 +69,11 @@ def win_count():
     by_tz_os=cframe.groupby(['tz',o_s])
     agg_count=by_tz_os.size().unstack().fillna(0)
     indexer=agg_count.sum(1).argsort()  #返回数组从小到大排列后的索引值
+    count_subset=agg_count.take(indexer)[-10:]
+    print(count_subset)
+    normed_subset=count_subset.div(count_subset.sum(1),axis=0)
+    normed_subset.plot(kind='barh',stacked=True)
+    plt.show()
 
 
 def test():
