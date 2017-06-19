@@ -69,7 +69,6 @@ def win_count():
     by_tz_os=cframe.groupby(['tz',o_s])
     agg_count=by_tz_os.size().unstack().fillna(0)
     indexer=agg_count.sum(1).argsort()  #返回数组从小到大排列后的索引值
-    print(indexer)
 
 
 def test():
