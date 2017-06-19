@@ -65,16 +65,12 @@ def get_browser():
 
 def win_count():
     cframe=frame[frame.a.notnull()]  #DataFrame类型数据过滤/筛选http://blog.csdn.net/jt1123/article/details/50086595
-    o_s=np.where(cframe['a'].str.contains('Windows'),'Windows','Not Windows')
+    o_s=np.where(cframe['a'].str.contains('Windows'),'Windows','Not Windows')    #返回一个ndarray类型
     by_tz_os=cframe.groupby(['tz',o_s])
-    # agg_count=by_tz_os.size().unstack().fillna(0)
-    # print(agg_count[:10])
-    size=by_tz_os.size()
+    agg_count=by_tz_os.size().unstack().fillna(0)
+    indexer=agg_count.sum(1).argsort()  #返回数组从小到大排列后的索引值
+    print(indexer)
 
-
-    # for i,j in by_tz_os:
-    #     print(type(i))   #i，分组名，元组类型
-    #     print(type(j))   #j,组内Data，DataFrame类型
 
 def test():
     np.random.seed(5)
