@@ -2,7 +2,6 @@
 
 import pandas as pd
 import numpy as np
-import tv
 
 unames=['user_id','gender','age','occupation','zip']
 users=pd.read_table('DATA/ch02/movielens/users.dat',sep='::',header=None,names=unames,engine='python')
