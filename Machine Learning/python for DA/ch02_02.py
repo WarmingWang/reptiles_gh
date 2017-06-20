@@ -2,6 +2,7 @@
 
 import pandas as pd
 import numpy as np
+import tv
 
 unames=['user_id','gender','age','occupation','zip']
 users=pd.read_table('DATA/ch02/movielens/users.dat',sep='::',header=None,names=unames,engine='python')
@@ -14,4 +15,7 @@ movies=pd.read_table('DATA/ch02/movielens/movies.dat',sep='::',header=None,names
 
 data=pd.merge(pd.merge(ratings,users),movies)
 mean_ratings=data.pivot_table(values='rating',index=['title'],columns=['gender'],aggfunc=np.mean)
-print(mean_ratings[:5])
+
+rating_by_title=data.groupyby('title').size()
+print(rating_by_title[:10])
+
