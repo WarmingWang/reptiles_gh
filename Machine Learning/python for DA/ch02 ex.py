@@ -88,5 +88,5 @@ def test():
     print(gp1.mean())
 
 
-win_count()
+# win_count()
 # test()

@@ -15,6 +15,8 @@ movies=pd.read_table('DATA/ch02/movielens/movies.dat',sep='::',header=None,names
 data=pd.merge(pd.merge(ratings,users),movies)
 mean_ratings=data.pivot_table(values='rating',index=['title'],columns=['gender'],aggfunc=np.mean)
 
-rating_by_title=data.groupyby('title').size()
-print(rating_by_title[:10])
+rating_by_title=data.groupby(['title']).size()
+active_title=rating_by_title.index[rating_by_title>=250]
+active_mean_rating=mean_ratings.ix[active_title]
+print(active_mean_rating)
 
