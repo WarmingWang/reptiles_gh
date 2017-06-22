@@ -26,11 +26,12 @@ def plt_year_sex():
 
 def add_prop(group):
     births=group.births.astype(float)
-    group['prop']=births/births.sum()
+    group['prop']=births/births.sum()  #births.sum()是对按year,sex分组后的小组内求和
     return group
 
-names=names.groupby(['year','sex']).apply(add_prop)    #得到1880年name1 Female人数占 1880年 Female总人数的比例
+names=names.groupby(['year','sex']).apply(add_prop) #得到1880年name1 Female人数占 1880年 Female总人数的比例
 check=np.allclose(names.groupby(['year','sex']).prop.sum(),1)
 print(check)
+
 # if __name__=='__main__':
 
