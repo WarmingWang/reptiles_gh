@@ -33,5 +33,6 @@ names=names.groupby(['year','sex']).apply(add_prop) #得到1880年name1 Female�
 check=np.allclose(names.groupby(['year','sex']).prop.sum(),1)
 print(check)
 
+
 # if __name__=='__main__':
 
