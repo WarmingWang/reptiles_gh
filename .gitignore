@@ -1,2 +1,6 @@
 #Pycharm
 .idea/
+
+
+#Jupyter
+.ipynb_checkpoints/
