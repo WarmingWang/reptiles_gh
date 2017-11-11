@@ -22,7 +22,7 @@ spans=soup.find_all('span',attrs={'class':'num strong-num'})
 
 total_on_sale=spans[0].string
 last_90day_deal = spans[1].string
-yesterday_viewed = spans[1].string
+yesterday_viewed = spans[2].string
 
 item={'ex_date':ex_date,
       'ex_time':ex_time, 
