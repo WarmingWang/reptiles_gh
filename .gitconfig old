@@ -1,0 +1,32 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
+	required = true
+[user]
+	name = ds17
+[user]
+	email = ingsed@outlook.com
+
+[https]
+[http]
+	sslverify = false
+	proxy = 192.168.144.195:8080
+[alias]
+	st = status
+    ck = checkout
+    cm = commit
+    co = checkout
+    br = branch
+    unstage = reset HEAD
+    last = log -1
+    lg = log --pretty=oneline --abbrev-commit
+    lgg = log --graph --pretty=oneline --abbrev-commit
+[credential]
+	helper = store
+[core]
+	quotepath = false
+[https]
+	proxy = 192.168.144.195:8080
+[gui]
+	recentrepo = D:/F Virtual/Codes/GitHub/reptiles
