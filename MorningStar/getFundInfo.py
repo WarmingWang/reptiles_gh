@@ -48,7 +48,7 @@ def login_with_firefox():
     browser.set_page_load_timeout(8)
 
     try:
-        browser.get('https://cn.morningstar.com/quickrank/default.aspx')
+        browser.get('https://www.morningstar.cn/quickrank/default.aspx')
     except Exception:
         time.sleep(5)
         browser.execute_script('window.stop()')

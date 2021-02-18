@@ -2877,3 +2877,43 @@ JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEven
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1610499211125	geckodriver	INFO	Listening on 127.0.0.1:57475
+1610499214150	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\SP52479\\AppData\\Local\\Temp\\rust_mozprofilen83Zzq"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1610499217387	Marionette	INFO	Listening on port 57491
+1610499217808	Marionette	WARN	TLS certificate errors will be ignored for this session
+1610499319935	Marionette	INFO	Stopped listening on port 57491
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1613638948370	geckodriver	INFO	Listening on 127.0.0.1:60670
+1613638951395	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\SP52479\\AppData\\Local\\Temp\\rust_mozprofile2U7ncT"
+1613638967990	geckodriver	INFO	Listening on 127.0.0.1:60718
+1613638971024	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\SP52479\\AppData\\Local\\Temp\\rust_mozprofiledqBenU"
+1613638986483	geckodriver	INFO	Listening on 127.0.0.1:60762
+1613638989494	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\SP52479\\AppData\\Local\\Temp\\rust_mozprofileLbVF5y"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1613638991607	Marionette	INFO	Listening on port 60770
+1613638992106	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/NetworkGeolocationProvider.jsm, line 555: TypeError: xhr.response.location is undefined
+JavaScript error: resource://gre/modules/NetworkGeolocationProvider.jsm, line 555: TypeError: xhr.response.location is undefined
+1613639051758	Marionette	INFO	Stopped listening on port 60770
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1613639053993	geckodriver	INFO	Listening on 127.0.0.1:60857
+1613639057011	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\SP52479\\AppData\\Local\\Temp\\rust_mozprofileJYu3rv"
+1613639067898	geckodriver	INFO	Listening on 127.0.0.1:60901
+1613639070909	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\SP52479\\AppData\\Local\\Temp\\rust_mozprofileQqtNVj"
+1613639086830	geckodriver	INFO	Listening on 127.0.0.1:60943
+1613639089855	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\SP52479\\AppData\\Local\\Temp\\rust_mozprofilev8naUb"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1613639091920	Marionette	INFO	Listening on port 60951
+1613639091970	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/NetworkGeolocationProvider.jsm, line 555: TypeError: xhr.response.location is undefined
